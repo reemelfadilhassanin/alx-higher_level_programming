@@ -9,9 +9,7 @@
  */
 void print_python_list_info(PyObject *p)
 {
-	int size;
-	int allocated;
-	int i;
+	int size, allocated, i;
 
 	size = Py_SIZE(p);
 	allocated = ((PyListObject *)p)->allocated;
@@ -20,7 +18,8 @@ void print_python_list_info(PyObject *p)
 
 	for (i = 0; i < size; i++)
 	{
-		printf("Element %d: ", i);
-		printf("%s\n", ((PyList_GetItem(p, i))->ob_type)->tp_name);
+		 PyObject *item = PyList_GetItem(p, i);
+        const char *type_name = item->ob_type->tp_name;
+        printf("Element %d: %s\n", i, type_name);
 	}
 }
