@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    length = len(sentence)
-    if length == 0:
+    length_t = len(sentence)
+    if length_t == 0:
         first_char = None
-        _tuple = (length, first_char)
-        return _tuple
+        
     else:
         first_char = sentence[0]
-        _tuple = (length, first_char)
+        _tuple = (length_t, first_char)
         return _tuple
