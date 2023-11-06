@@ -4,8 +4,8 @@
 #include <listobject.h>
 
 /**
- * print_python_list_info - prints some basic info about Python lists.
- * @p: python object.
+ * print_python_list_info - prints some of basic info about Python lists.
+ * @p: python list object.
  */
 void print_python_list_info(PyObject *p)
 {
