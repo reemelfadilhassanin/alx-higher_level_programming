@@ -11,27 +11,23 @@
 
 int is_palindrome(listint_t **head)
 {
-    listint_t *current = *head;
-    int val[2048];
-    int i = 0;
-    int j = 0;
-
-    if (*head)
-    {
-       
-        while (current)
-        {
-            val[i] = current->n;
-            current = current->next;
-            i++;
-        }
-        while (j < i / 2)
-        {
-            if (val[j] == val[i - j - 1])
-                j++;
-            else
-                return (0);
-        }
-    }
-
-    return (1);
+	if (head == NULL || *head == NULL)
+	return (aux_palind(head, *head));
+}
+/**
+ * aux_palind - function to know if palindrome
+ * @head: head list
+ * @end: end list
+*/
+int aux_palind(listint_t **head, listint_t *end)
+{
+	 if (end == NULL)
+	 return (1);
+	 if (aux_palind(head, end->next) && (*head)->n == end->n)
+	 {
+		*head = (*head)->next;
+		return (1);
+	 }
+	 return (0);
+}
+    
