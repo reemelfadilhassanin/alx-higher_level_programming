@@ -21,9 +21,9 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 
-	if (PyBytes_AsStringAndSize(p, &trying_str, &size) = -1)
+	PyBytes_AsStringAndSize(p, &trying_str, &size);
     {
-	printf("  size: %zd\n", size);
+	printf("  size: %li \n", size);
 	printf("  trying string: %s\n", trying_str);
 	if (size < 10)
 		printf("  first %li bytes:", size + 1);
@@ -34,7 +34,7 @@ void print_python_bytes(PyObject *p)
 		printf(" %02hhx", trying_str[i]);
     }
     printf("\n");
-}
+
 }
 
 /**
