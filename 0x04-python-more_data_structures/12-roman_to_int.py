@@ -1,21 +1,12 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
         if not isinstance(roman_string, str):
-           return (0)
+           return 0
         dec = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
                             'C': 100, 'D': 500, 'M': 1000}
         result = 0
         num = 0
         for i in reversed(roman_string):
-         num = dec[roman_string[i]]
+         num = dec[i]
          result += num if result < num * 5 else -num
-         if dec.get(roman_string[i], 0) == 0:
-            return result
-
-        if (i != (len(roman_string) - 1) and
-                dec[roman_string[i]] < dec[roman_string[i + 1]]):
-            result += dec[roman_string[i]] * -1
-
-        else:
-            result += dec[roman_string[i]]
         return result
