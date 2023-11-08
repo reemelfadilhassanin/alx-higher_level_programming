@@ -2,6 +2,11 @@
 #include <object.h>
 #include <listobject.h>
 #include <bytesobject.h>
+/**
+ * print_python_bytes - function that gives PyBytesObject data
+ *
+ * @p: the PyObject list object
+ */
 
 void print_python_bytes(PyObject *p)
 {
@@ -16,18 +21,26 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 
-	PyBytes_AsStringAndSize(p, &trying_str, &size);
-
-	printf("  size: %li\n", size);
+	if (PyBytes_AsStringAndSize(p, &trying_str, &size) = -1)
+    {
+	printf("  size: %zd\n", size);
 	printf("  trying string: %s\n", trying_str);
 	if (size < 10)
 		printf("  first %li bytes:", size + 1);
 	else
 		printf("  first 10 bytes:");
 	for (i = 0; i <= size && i < 10; i++)
+    {
 		printf(" %02hhx", trying_str[i]);
-	printf("\n");
+    }
+    printf("\n");
 }
+}
+
+/**
+ * print_python_list - function to print info of python lists
+ * @p: Alist object
+*/
 
 void print_python_list(PyObject *p)
 {
