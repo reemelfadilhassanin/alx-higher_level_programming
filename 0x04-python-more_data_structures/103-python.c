@@ -38,7 +38,7 @@ void print_python_bytes(PyObject *p)
 
 /**
  * print_python_list - function to print info of python lists
- * @p: Alist object
+ * @p: A list object
 */
 
 void print_python_list(PyObject *p)
