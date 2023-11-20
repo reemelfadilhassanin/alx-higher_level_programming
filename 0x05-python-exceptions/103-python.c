@@ -57,16 +57,26 @@ void print_python_float(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	PyFloatObject *obj;
+	size_t x, len, i;
+	const char *ty;
+	PyListObject *list;
 
-    printf("[.] float object info\n");
-
-    if (!PyFloat_Check(p))
-    {
-        printf("  [ERROR] Invalid Float Object\n");
-        return;
-    }
-
-    obj = (PyFloatObject *)p;
-    printf("  value: %f\n", obj->ob_fval);
+	setbuf(stdout, NULL);
+	printf("[*] Python list info\n");
+	if (!PyList_Check(p))
+	{
+		printf("  [ERROR] Invalid List Object\n");
+		return;
+	}
+	list = (PyListObject *)p;
+	len = PyList_GET_SIZE(p);
+	x = list->allocated;
+	printf("[*] Size of the Python List = %ld\n[*] Allocated = %li\n", len, x);
+	for (i = 0; i < len; i++)
+	{
+		ty = (list->ob_item[i])->ob_type->tp_name;
+		printf("Element %li: %s\n", i, t);
+		!strcmp(ty, "bytes") ? print_python_bytes(list->ob_item[i]) : (void)ty;
+		!strcmp(ty, "float") ? print_python_float(list->ob_item[i]) : (void)ty;
+	}
 }
