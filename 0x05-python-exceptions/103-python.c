@@ -22,7 +22,7 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	s = ((PyBytesObject *)(p));
+	s = ((PyBytesObject *)(p))->ob_sval;
     byte = PyBytes_Size(p);
 	printf("  size: %ld\n  trying string: %s\n", byte, s);
 	byte >= 10 ? byte = 10 : byte++;
@@ -47,7 +47,7 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	float = (PyFloatObject *)(p);
+	float = (PyFloatObject *)(p)->ob_sval;
 	s = PyOS_double_to_string(float, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 	printf("  value: %s\n", s);
 }
