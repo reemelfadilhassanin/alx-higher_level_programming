@@ -32,27 +32,27 @@ void print_python_bytes(PyObject *p)
 }
 /**
  * print_python_float - function to print python objects
- * @p: pointer to point to PyObject p
+ * @p: pointer to point toPyObject p
  */
 void print_python_float(PyObject *p)
 {
-	char *s;
-	double float;
+	char *str;
+	double f;
 
 	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
-	if (!PyFloat_Check(p))
+	if (PyFloat_Check(p) == 0)
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	float = ((PyFloatObject *)(p))->ob_fval;
-	s = PyOS_double_to_string(float, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
-	printf("  value: %s\n", s);
+	f = ((PyFloatObject *)(p))->ob_fval;
+	str = PyOS_double_to_string(f, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+	printf("  value: %s\n", str);
 }
 /**
- * print_python_list - function to print python liat objects
- * @p: pointer to point to PyObject objects
+ * print_python_list - print python things
+ * @p: pointer to PyObject p
  */
 void print_python_list(PyObject *p)
 {
