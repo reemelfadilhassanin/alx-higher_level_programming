@@ -51,8 +51,8 @@ void print_python_float(PyObject *p)
 	printf("  value: %s\n", str);
 }
 /**
- * print_python_list - print python things
- * @p: pointer to PyObject p
+ * print_python_list - function that print python object list
+ * @p: pointer to point to  PyObject 
  */
 void print_python_list(PyObject *p)
 {
