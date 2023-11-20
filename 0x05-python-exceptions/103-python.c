@@ -57,7 +57,7 @@ void print_python_float(PyObject *p)
 void print_python_list(PyObject *p)
 {
 	size_t a, size, i;
-	const char *type;
+	const char *t;
 	PyListObject *list;
 
 	setbuf(stdout, NULL);
@@ -73,9 +73,9 @@ void print_python_list(PyObject *p)
 	printf("[*] Size of the Python List = %ld\n[*] Allocated = %li\n", size, a);
 	for (i = 0; i < size; i++)
 	{
-		type = (list->ob_item[i])->ob_type->tp_name;
-		printf("Element %li: %s\n", i, type);
-		!strcmp(type, "bytes") ? print_python_bytes(list->ob_item[i]) : (void)type;
-		!strcmp(type, "float") ? print_python_float(list->ob_item[i]) : (void)type;
+		t = (list->ob_item[i])->ob_type->tp_name;
+		printf("Element %li: %s\n", i, t);
+		!strcmp(t, "bytes") ? print_python_bytes(list->ob_item[i]) : (void)t;
+		!strcmp(t, "float") ? print_python_float(list->ob_item[i]) : (void)t;
 	}
 }
