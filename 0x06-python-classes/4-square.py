@@ -17,33 +17,33 @@ class Square:
         """
         self.__size = size
 
-    def area(self):
-        """Method cal the area of square.
-
-        Returns: the square area.
-        """
-        return self.__size ** 2
-    
     @property
     def size(self):
-        """Retrive size of a the square
+        """Retrive size.
+
+        Returns:
+            Value of size.
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Define setter method for size.
+        """Setter method.
 
         Args:
-            value (int): default int value.
-
-        Raises:
-            TypeError: size must be an integer
-            ValueError: size must be >= 0
+            value (int): nust be int value.
         """
+
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
+    def area(self):
+        """Method cal the area of square.
+
+        Returns: the square area.
+        """
+        return self.__size ** 2
