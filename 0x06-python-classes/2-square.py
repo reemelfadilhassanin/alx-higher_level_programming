@@ -11,9 +11,9 @@ class Square:
         Args:
             size: private instance size of the square.
 
-            Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is > 0.
+        Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is > 0.
         """
         self.__size = size
         
