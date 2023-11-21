@@ -50,7 +50,7 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        """Property setter for Node.
+        """Setter for Node.
 
         Args:
             value (None): next node of a Node.
@@ -65,36 +65,36 @@ class Node:
 
 class SinglyLinkedList:
     """
-    Class that defines properties of SinglyLinkedList.
+    Class of SinglyLinkedList.
 
     Attributes:
-        head: head of the SinglyLinkedList.
+        head: head of List.
     """
     def __init__(self):
-        """Creates new instances of SinglyLinkedList .
+        """Construction of SinglyLinkedList.
 
         Args:
-            __head : head of the SinglyLinkedList .
+            __head : head of the SinglyLinkedList.
         """
         self.__head = None
 
     def __str__(self):
-        """Represents the class objects as a string.
+        """Represents the class objects.
 
-        Returns: The class object represented as a string.
+        Returns: The class object.
         """
-        temp_var = self.__head
+        temp = self.__head
         print_node = []
-        while temp_var:
+        while temp:
             print_node.sort()
-            print_node.append(str(temp_var.data))
-            temp_var = temp_var.next_node
+            print_node.append(str(temp.data))
+            temp = temp.next_node
 
         print_node.sort(key=int)
         return ("\n".join(print_node))
 
     def sorted_insert(self, value):
-        """Inserts a new node at a given position.
+        """Inserts a new node.
 
         Args:
             value: value.
