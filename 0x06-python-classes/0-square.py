@@ -3,6 +3,6 @@
 
 
 class Square:
-    """Class has no attribute and construct have none.
-    """
-    pass
+	"""Class has no attribute and construct have none.
+	"""
+	pass
