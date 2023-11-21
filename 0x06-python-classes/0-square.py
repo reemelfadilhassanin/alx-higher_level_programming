@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-class Square:
-    """
-    define empty squear class.
-    """
+"""This define a empty Square class"""
 
-    def __init__(self):
-        """
-        constructor have empty attribute for empty class.
-        """
-        pass
+
+class Square:
+    """Empty class with no attribute.
+    """
+    
+def __init__(self):
+     """Constructor have no attribute of yjis class.
+    """
+pass
