@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""This define a empty Square class"""
+"""This define square class"""
 
 
 class Square:
-    """Empty class with no attribute &construct.
-    """ 
+    """Class has no attribute and construct have none.
+    """
     pass
