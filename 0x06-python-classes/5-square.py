@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-"""Defines a class Square"""
+"""This define square class"""
 
 
 class Square:
     """
-    Class that defines properties of square by: (based on 4-square.py).
+    Class has no attribute and construct have none.
 
     Attributes:
-        size: size of a square (1 side).
+         size: private instance size of the square.
     """
     def __init__(self, size=0):
-        """Creates new instances of square.
+        """Constructor of square with one instance size.
 
         Args:
-            size: size of the square (1 side).
-        """
+           size: private instance size of the square.
+		"""
         self.__size = size
 
     def area(self):
-        """Calculates the area of square.
+        """Method cal the area of square.
 
-        Returns: the current square area.
+       Returns: the square area.
         """
         return self.__size ** 2
 
@@ -32,10 +32,10 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Property setter for size.
+        """Setter method.
 
         Args:
-            value (int): size of a square (1 side).
+            value (int): nust be int value..
 
         Raises:
             TypeError: size must be an integer
@@ -49,7 +49,7 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        """prints in stdout the square with the character #
+        """prints # in  square
         """
 
         if self.__size == 0:
