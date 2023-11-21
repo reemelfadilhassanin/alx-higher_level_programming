@@ -56,7 +56,7 @@ class Node:
 			value (None): next node of a Node.
 
 		Raises:
-			TypeError: next_node must be a Node object .
+			TypeError: next_node must be a Node object.
 		"""
 		if value is not None and not isinstance(value, Node):
 			raise TypeError("next_node must be a Node object")
@@ -71,10 +71,10 @@ class SinglyLinkedList:
 		head: head of the SinglyLinkedList.
 	"""
 	def __init__(self):
-		"""Construction of SinglyLinkedList .
+		"""Construction of SinglyLinkedList.
 
 		Args:
-			__head : head of the SinglyLinkedList .
+			__head : head of the SinglyLinkedList.
 		"""
 		self.__head = None
 
@@ -85,7 +85,7 @@ class SinglyLinkedList:
 		"""
 		curr = self.__head
 		print_node = []
-		while curr:
+		while curr is not None:
 			print_node.sort()
 			print_node.append(str(curr.data))
 			curr = curr.next_node
