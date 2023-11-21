@@ -4,9 +4,9 @@
 
 class Square:
     """Empty class with no attribute.
-    """
-    
-def __init__(self):
-     """Constructor have no attribute of yjis class.
-    """
-pass
+    """ 
+    def __init__(self):
+       """Constructor have no attribute of yjis class.
+       """
+       
+       pass
