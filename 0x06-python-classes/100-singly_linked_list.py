@@ -56,7 +56,7 @@ class Node:
 			value (None): next node of a Node.
 
 		Raises:
-			TypeError: next_node must be a Node object.
+			TypeError: next_node must be a Node object .
 		"""
 		if value is not None and not isinstance(value, Node):
 			raise TypeError("next_node must be a Node object")
@@ -71,10 +71,10 @@ class SinglyLinkedList:
 		head: head of the SinglyLinkedList.
 	"""
 	def __init__(self):
-		"""Construction of SinglyLinkedList.
+		"""Construction of SinglyLinkedList .
 
 		Args:
-			__head : head of the SinglyLinkedList.
+			__head : head of the SinglyLinkedList .
 		"""
 		self.__head = None
 
@@ -83,28 +83,28 @@ class SinglyLinkedList:
 
 		Returns: The class object.
 		"""
-		curr = self.__head
+		temp_var = self.__head
 		print_node = []
-		while curr is not None:
+		while temp_var:
 			print_node.sort()
-			print_node.append(str(curr.data))
-			curr = curr.next_node
+			print_node.append(str(temp_var.data))
+			temp_var = temp_var.next_node
 
 		print_node.sort(key=int)
 		return ("\n".join(print_node))
 
 	def sorted_insert(self, value):
-		"""Inserts a new node IN LIST.
+		"""Inserts a new node .
 
 		Args:
 			value: value.
 		"""
 		if self.__head is None:
-			str = Node(value)
-			str.next_node = self.__head
-			self.__head = str
+			new_node = Node(value)
+			new_node.next_node = self.__head
+			self.__head = new_node
 		else:
-			str = Node(value)
-			str.data = value
-			str.next_node = self.__head
-			self.__head = str
+			new_node = Node(value)
+			new_node.data = value
+			new_node.next_node = self.__head
+			self.__head = new_node
