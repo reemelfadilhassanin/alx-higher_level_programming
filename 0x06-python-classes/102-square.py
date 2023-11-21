@@ -48,63 +48,63 @@ class Square:
 		"""
 		return self.__size ** 2
 
-    def __lt__(self, other):
-        """Rich comparison operator to compare if square area is less
-        than another.
+	def __lt__(self, other):
+		"""Rich comparison operator to compare if square area is less
+		than another.
 
-        Args:
-            other (Square): square to compare size to.
+		Args:
+			other (Square): square to compare size to.
 
-        Returns: True or false.
-        """
-        return self.__size < other.__size
+		Returns: True or false.
+		"""
+		return self.__size < other.__size
 
-    def __le__(self, other):
-        """Method to compare squares.
+	def __le__(self, other):
+		"""Method to compare squares.
 
-        Args:
-            other: square to compare.
+		Args:
+			other: square to compare.
 
-        Returns: True or false.
-        """
-        return self.__size <= other.__size
+		Returns: True or false.
+		"""
+		return self.__size <= other.__size
 
-    def __eq__(self, other):
-        """Compare area of square.
+	def __eq__(self, other):
+		"""Compare area of square.
 
-        Args:
-            other: square to compare.
+		Args:
+			other: square to compare.
 
-        Returns: True or false
-        """
-        return self.__size == other.__size
+		Returns: True or false
+		"""
+		return self.__size == other.__size
 
-    def __ne__(self, other):
-        """Compare the equality value of area of squares.
+	def __ne__(self, other):
+		"""Compare the equality value of area of squares.
 
-        Args:
-            other: square to compar.
+		Args:
+			other: square to compar.
 
-        Returns: True or false
-        """
-        return self.__size != other.__size
+		Returns: True or false
+		"""
+		return self.__size != other.__size
 
-    def __gt__(self, other):
-        """Compare the area is greator.
+	def __gt__(self, other):
+		"""Compare the area is greator.
 
-        Args:
-            other: square to compare.
+		Args:
+			other: square to compare.
 
-        Returns: True or false
-        """
-        return self.__size > other.__size
+		Returns: True or false
+		"""
+		return self.__size > other.__size
 
-    def __ge__(self, other):
-        """Check if area is >=.
+	def __ge__(self, other):
+		"""Check if area is >=.
 
-        Args:
-            other: square to compare.
+		Args:
+			other: square to compare.
 
-        Returns: True or false
-        """
-        return self.__size >= ot
+		Returns: True or false
+		"""
+		return self.__size >= ot
