@@ -10,6 +10,10 @@ class Square:
 
         Args:
             size: private instance size of the square.
+
+        Raises:
+            TypeError: If size is dosenot an integer.
+            ValueError: If size is > 0.
         """
         if type(size) is not int:
             raise TypeError('size must be an integer')
