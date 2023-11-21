@@ -17,13 +17,6 @@ class Square:
 		"""
 		self.__size = size
 
-		def area(self):
-		"""Method cal the area of square.
-
-		Returns: the square area.
-		"""
-		return self.__size ** 2
-
 	@property
 	def size(self):
 		"""Retrive size.
@@ -47,12 +40,19 @@ class Square:
 			raise ValueError("size must be >= 0")
 		else:
 			self.__size = value
+
+	def area(self):
+		"""Method cal the area of square.
+
+		Returns: the square area.
+		"""
+		return self.__size ** 2
 	
 	def my_print(self):
-		"""method to prints #the square"""
+		"""method to print # in stdout the squar
+		"""
 
 		if self.__size == 0:
 			print()
-		else:
-			for i in range(self.__size):
-				print("#" * (self.__size))
+		for i in range(self.__size):
+			print("#" * (self.__size))
