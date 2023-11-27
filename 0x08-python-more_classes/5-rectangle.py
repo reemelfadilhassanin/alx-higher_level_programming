@@ -58,17 +58,12 @@ class Rectangle:
 
         return f"Rectangle({self.__width}, {self.__height})"
 
+    def perimeter(self):
+        """Public instance to return perimeter of Rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
 
-def __del__(self):
-    """Print the message Bye rectangle...
-    """
-
-
-print("Bye rectangle...")
-
-
-def perimeter(self):
-    """public instance to return the perimeter of the Rectangle."""
-    if self.__width == 0 or self.__height == 0:
-        return (0)
-    return ((self.__width * 2) + (self.__height * 2))
+    def __del__(self):
+        """Print a message Bye rectangle...."""
+        print("Bye rectangle...")
