@@ -12,7 +12,7 @@ class Rectangle:
             width (int): The width of rectangle.
             height (int): The height of rectangle.
         """
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
