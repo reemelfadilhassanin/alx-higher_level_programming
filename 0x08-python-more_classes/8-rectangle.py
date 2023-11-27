@@ -10,8 +10,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Constructor of new object Rectangle.
         Args:
-                        width (int): The width of rectangle.
-                        height (int): The height of rectangle.
+            width (int): The width of rectangle.
+            height (int): The height of rectangle.
         """
         type(self).number_of_instances += 1
         self.width = width
@@ -67,10 +67,6 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
-
-    def area(self):
-        """Return the area of the Rectangle."""
-        return (self.__width * self.__height)
 
     def __del__(self):
         """Print a message Bye rectangle...."""
