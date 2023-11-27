@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# 2-rectangle.py
 """Defines a Rectangle class."""
 
 
@@ -23,17 +22,6 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Get the width private value 
-
-        Attributes:
-                value (int): int value for width of rectangle
-
-        Raises:
-                TypeError: If `value` is not an int.
-                ValueError: If `value` is less than 0.
-
-        """
-
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
