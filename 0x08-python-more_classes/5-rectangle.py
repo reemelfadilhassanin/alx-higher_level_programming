@@ -61,5 +61,5 @@ class Rectangle:
 
 @property
 def width(self):
-    """delete instance Rectangle."""
+    """Delete instance Rectangle."""
     return self.__width
