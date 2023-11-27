@@ -1,23 +1,22 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+"""This defines a Rectangle class."""
 
 
 class Rectangle:
-    """Define rectangle with public and private instance."""
+    """This represent a rectangle class."""
 
     def __init__(self, width=0, height=0):
-        """Constructor initialize a new object Rectangle.
+        """Constructor of new object Rectangle.
         Args:
             width (int): The width of rectangle.
             height (int): The height of rectangle.
         """
-
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Define private  instance width of rectangle."""
+        """public instance method to set width of the Rectangle."""
         return self.__width
 
     @width.setter
@@ -30,7 +29,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Define public method for set height of the Rectangle."""
+        """Public inst method to set height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -42,11 +41,11 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Define public attribuite area of the Rectangle."""
+        """Public instance method that Return area of Rectangle."""
         return (self.__width * self.__height)
 
     def perimeter(self):
-        """Define Public instance method that return the perimeter of the Rectangle."""
+        """Public instance method that Return perimeter of Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
