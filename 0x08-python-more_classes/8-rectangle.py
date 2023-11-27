@@ -4,6 +4,7 @@
 
 class Rectangle:
     """This represent a rectangle class."""
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -43,8 +44,36 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    def area(self):
+        """Return the area of the Rectangle."""
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        """Public instance to return perimeter of Rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Static methof that return biggest rectangle.
+        Args:
+            rect_1 (Rectangle): Instance of first Rectangle.
+            rect_2 (Rectangle): Instance of second Rectangle.
+        Raises:
+            TypeError: If either of rect_1 or rect_2 is not a Rectangle.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() == rect_2.area() or rect_1.area() > rect_2.area():
+            return rect_1
+        if rect_1.area() < rect_2.area():
+            return rect_2
+
     def __str__(self):
-        """Print the rectangle with the character #.
+        """Print the rectangle with the character #
         """
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -62,31 +91,7 @@ class Rectangle:
 
         return f"Rectangle({self.__width}, {self.__height})"
 
-    def perimeter(self):
-        """Public instance to return perimeter of Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
-
     def __del__(self):
         """Print a message Bye rectangle...."""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """Static methof that return biggest rectangle.
-        Args:
-                        rect_1 (Rectangle): Instance of first Rectangle.
-                        rect_2 (Rectangle): Instance of second Rectangle.
-        Raises:
-                        TypeError: If either of rect_1 or rect_2 is not a Rectangle.
-        """
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() == rect_2.area() or rect_1.area() > rect_2.area():
-            return rect_1
-        if rect_1.area() < rect_2.area():
-            return rect_2
