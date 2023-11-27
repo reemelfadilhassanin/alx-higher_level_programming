@@ -59,12 +59,16 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
 
-@property
-def width(self):
-    """Get/set the width of the Rectangle."""
-    return self.__width
-
-
 def __del__(self):
-    """Print a message Bye rectangle...."""
-    print("Bye rectangle...")
+    """Print the message Bye rectangle...
+    """
+
+
+print("Bye rectangle...")
+
+
+def perimeter(self):
+    """public instance to return the perimeter of the Rectangle."""
+    if self.__width == 0 or self.__height == 0:
+        return (0)
+    return ((self.__width * 2) + (self.__height * 2))
