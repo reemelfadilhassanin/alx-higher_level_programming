@@ -51,10 +51,10 @@ class Rectangle:
 
         rect_str = []
         for i in range(self.__height):
-            [rect_str.append(self.print_symbol) for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect_str.append("\n")
-        return ("".join(rect_str))
+            for j in range(self.__width):
+                rec_str += str(self.print_symbol)
+            rec_str += "\n"
+        return rec_str[:-1]
 
     def __repr__(self):
         """Return a string representation of the rectangle"""
