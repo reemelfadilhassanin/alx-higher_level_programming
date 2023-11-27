@@ -10,8 +10,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Constructor of new object Rectangle.
         Args:
-                width (int): The width of rectangle.
-                height (int): The height of rectangle.
+                        width (int): The width of rectangle.
+                        height (int): The height of rectangle.
         """
         type(self).number_of_instances += 1
         self.width = width
@@ -68,6 +68,10 @@ class Rectangle:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
+    def area(self):
+        """Return the area of the Rectangle."""
+        return (self.__width * self.__height)
+
     def __del__(self):
         """Print a message Bye rectangle...."""
         Rectangle.number_of_instances -= 1
@@ -75,17 +79,18 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return the Rectangle with the greater area.
+        """Static methof that return biggest rectangle.
         Args:
-            rect_1 (Rectangle): The first Rectangle.
-            rect_2 (Rectangle): The second Rectangle.
+                        rect_1 (Rectangle): Instance of first Rectangle.
+                        rect_2 (Rectangle): Instance of second Rectangle.
         Raises:
-            TypeError: If either of rect_1 or rect_2 is not a Rectangle.
+                        TypeError: If either of rect_1 or rect_2 is not a Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return (rect_1)
-        return (rect_2)
+        if rect_1.area() == rect_2.area() or rect_1.area() > rect_2.area():
+            return rect_1
+        if rect_1.area() < rect_2.area():
+            return rect_2
