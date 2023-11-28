@@ -3,66 +3,65 @@ import sys
 
 
 def init_board(n):
-    """Initialize an `n`x`n` sized chessboard with 0's."""
-    board = []
-    [board.append([]) for i in range(n)]
-    [row.append(' ') for i in range(n) for row in board]
-    return (board)
+    """construct for placing N non-attacking queens on an N×N chessboard."""
+    b = []
+    [b.append([]) for i in range(n)]
+    [row.append(' ') for i in range(n) for row in b]
+    return (b)
 
 
-def board_deepcopy(board):
-    """Return a deepcopy of a chessboard."""
-    if isinstance(board, list):
-        return list(map(board_deepcopy, board))
-    return (board)
+def board_deepcopy(b):
+    """This method return chessboard."""
+    if isinstance(b, list):
+        return list(map(board_deepcopy, b))
+    return (b)
 
 
-def get_solution(board):
-    """Return the list of lists representation of a solved chessboard."""
-    solution = []
-    for r in range(len(board)):
-        for c in range(len(board)):
-            if board[r][c] == "Q":
-                solution.append([r, c])
+def get_solution(b):
+    """This method return list copy of a solved chessboard."""
+    solv = []
+    for r in range(len(b)):
+        for c in range(len(b)):
+            if b[r][c] == "Q":
+                solv.append([r, c])
                 break
-    return (solution)
+    return (solv)
 
 
 def xout(board, row, col):
-    # X out all forward spots
+    """This out all spots diagonally down to the left
+
+    Args:
+        board (_type_): define board
+        row (_type_): define row of chessebord
+        col (_type_): define colum of chessebord
+    """
     for c in range(col + 1, len(board)):
         board[row][c] = "x"
-    # X out all backwards spots
     for c in range(col - 1, -1, -1):
         board[row][c] = "x"
-    # X out all spots below
     for r in range(row + 1, len(board)):
         board[r][col] = "x"
-    # X out all spots above
     for r in range(row - 1, -1, -1):
         board[r][col] = "x"
-    # X out all spots diagonally down to the right
     c = col + 1
     for r in range(row + 1, len(board)):
         if c >= len(board):
             break
         board[r][c] = "x"
         c += 1
-    # X out all spots diagonally up to the left
     c = col - 1
     for r in range(row - 1, -1, -1):
         if c < 0:
             break
         board[r][c]
         c -= 1
-    # X out all spots diagonally up to the right
     c = col + 1
     for r in range(row - 1, -1, -1):
         if c >= len(board):
             break
         board[r][c] = "x"
         c += 1
-    # X out all spots diagonally down to the left
     c = col - 1
     for r in range(row + 1, len(board)):
         if c < 0:
@@ -72,6 +71,17 @@ def xout(board, row, col):
 
 
 def recursive_solve(board, row, queens, solutions):
+    """THis define recursive solution of chesseboard
+
+    Args:
+        board (_type_): define board
+        row (_type_): define row
+        queens (_type_): define queens
+        solutions (_type_): define recursive solution
+
+    Returns:
+        solutions: solutions
+    """
     if queens == len(board):
         solutions.append(get_solution(board))
         return (solutions)
