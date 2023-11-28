@@ -1,0 +1,113 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("")
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation(0)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation({"a": 1, "b": 2, "c":3})
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation("a", "b", "woow")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 3 were given
+>>> text_indentation("Days")
+Days
+>>> text_indentation("Happy Days")
+Happy Days
+>>> text_indentation("Days          ")
+Days
+>>> text_indentation("Days\n\n")
+Days
+<BLANKLINE>
+>>> text_indentation("        daysss")
+daysss
+	
+>>> text_indentation("        dayssss          ")
+dayssss
+>>> text_indentation("      ")
+
+>>> text_indentation("days: off")
+days:
+<BLANKLINE>
+off
+>>> text_indentation("days.")
+days.
+<BLANKLINE>
+>>> text_indentation("Days?")
+Days?
+<BLANKLINE>
+>>> text_indentation("?Days.")
+?
+<BLANKLINE>
+Days.
+<BLANKLINE>
+>>> text_indentation("Come\n\nOn.")
+Come
+<BLANKLINE>
+On.
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation(".?:     ")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation("      ?:  :  ")
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+>>> text_indentation("    ?     ")
+?
+<BLANKLINE>
+>>> text_indentation("\n")
+<BLANKLINE>
+>>> text_indentation("\n\n")
+<BLANKLINE>
+<BLANKLINE>
+>>> text_indentation("Happy: Days? off. day")
+Happy:
+<BLANKLINE>
+Days?
+<BLANKLINE>
+off.
+<BLANKLINE>
+day
+>>> text_indentation("Happy  :     Days   ?   off.    day")
+Happy:
+<BLANKLINE>
+Days?
+<BLANKLINE>
+off.
+<BLANKLINE>
+day
+
+Test existing newlines:
+	>>> text_indentation("?\n\n.\n:")
+	?
+	<BLANKLINE>
+	<BLANKLINE>
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	<BLANKLINE>
+	:
+	<BLANKLINE>

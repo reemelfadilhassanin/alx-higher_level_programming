@@ -1,0 +1,108 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> module =  __import__('0-add_integer').__doc__
+>>> len (module) > 1
+True
+
+>>> add =  __import__('0-add_integer').add_integer.__doc__
+>>> len (add) > 1
+True
+
+Test a and check b is 98 defualt
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(2)
+100
+>>> add_integer(-2)
+96
+>>> add_integer(0)
+98
+>>> add_integer(100.03)
+198
+>>> add_integer(-100.03)
+-2
+>>> add_integer('school')
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(3, 4)
+7
+>>> add_integer(10000000, 1000000)
+11000000
+>>> add_integer(10, -20)
+-10
+>>> add_integer(-10, 20)
+10
+>>> add_integer(-5, -6)
+-11
+>>> add_integer(10, 3.98)
+13
+
+>>> add_integer(13.7854, 2)
+15
+>>> add_integer(11.587, 3.98)
+14
+>>> add_integer(-10.47, -9.475)
+-19
+>>> add_integer(10, 'b')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("hi", 10)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer("hi", "test")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(0, 0)
+0
+>>> add_integer(15, 0)
+15
+>>> add_integer(0, 15)
+15
+>>> add_integer(-2, 2)
+0
+>>> add_integer(2, -2)
+0
+>>> add_integer(float('inf'), 12)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(0, float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(0, float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+>>> add_integer(float('inf'), float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('nan'),0)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+>>> add_integer(float('nan'),float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
