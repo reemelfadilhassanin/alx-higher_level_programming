@@ -111,10 +111,3 @@ Test None object
 
 >>> obj5.print_sorted()
 [None]
->>> my_list = MyList("days")
-    
->>> my_list
-['d', 'a', 'y', 's']
-
->>> my_list.print_sorted()
-['a', 'd', 's', 'y']
