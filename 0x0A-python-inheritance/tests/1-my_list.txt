@@ -1,74 +1,72 @@
-``1-my_list`` module
-======================
 
+0t.txt module
+====================
 
-Importing function from the module:
+Importing the class from the module:
 >>> MyList = __import__("1-my_list").MyList
 
-Checke module docstring:
->>> mo = __import__("1-my_list").__doc__
->>> len(mo) > 1
+Checking for module docstring:
+>>> m = __import__("1-my_list").__doc__
+>>> len(m) > 1
 True
 
-Checke class docstring:
->>> cl = __import__("1-my_list").MyList.__doc__
->>> len(cl) > 1
+Checking for class docstring:
+>>> c = __import__("1-my_list").MyList.__doc__
+>>> len(c) > 1
 True
 
-Checke method docstring
-        >>> mtd = __import__("1-my_list").MyList.print_sorted.__doc__
-        >>> len(mtd) > 1
+Checking for method docstring
+        >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
+        >>> len(f) > 1
         True
 
-Checke if MyList inherits from list:
-	 >>> issubclass(MyList, list)
-	 True
+Checking given test case
+>>> my_list = MyList()
 
-Test if empty list:
-	 >>> list = MyList()
-	 >>> list.print_sorted()
-	 []
+>>> my_list.append(1)
 
-Test using given test case
->>> list = MyList()
+>>> my_list.append(4)
 
->>> list.append(1)
+>>> my_list.append(2)
 
->>> list.append(4)
+>>> my_list.append(3)
 
->>> list.append(2)
+>>> my_list.append(5)
 
->>> list.append(3)
-
->>> list.append(5)
-
->>> print(list)
+>>> print(my_list)
 [1, 4, 2, 3, 5]
 
->>> list.print_sorted()
+>>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
->>> print(list)
+>>> print(my_list)
 [1, 4, 2, 3, 5]
 
 Checking empty object
->>> list = MyList()
->>> list.print_sorted()
+>>> obj1 = MyList()
+
+>>> print(obj1)
 []
 
 >>> obj1.print_sorted()
 []
 
-Test if appendng:
-	>>> list.append(-1)
-	>>> list.append(-2)
-	>>> list.append(-3)
-	>>> list.append(-4)
-	>>> print(list)
-	[-1, -2, -3, -4]
-	>>> list.print_sorted()
-	[-4, -3, -2, -1]
+Checking negative values
+>>> obj2 = MyList()
 
+>>> obj2.append(-1)
+
+>>> obj2.append(0)
+
+>>> obj2.append(-233)
+
+>>> obj2.append(-9)
+
+>>> print(obj2)
+[-1, 0, -233, -9]
+
+>>> obj2.print_sorted()
+[-233, -9, -1, 0]
 
 Checking NULL object
 >>> obj3 = MyList()
@@ -84,27 +82,27 @@ NameError: name 'NULL' is not defined
 >>> obj3.print_sorted()
 []
 
-Test NaN object
->>> test2 = MyList()
+Checking NaN object
+>>> obj4 = MyList()
 
->>> test2.append(NaN)
+>>> obj4.append(NaN)
 Traceback (most recent call last):
     ...
 NameError: name 'NaN' is not defined
 
->>> print(test2)
+>>> print(obj4)
 []
 
->>> test2.print_sorted()
+>>> obj4.print_sorted()
 []
 
-Test None
->>> test3 = MyList()
+Checking None object
+>>> obj5 = MyList()
 
->>> test3.append(None)
+>>> obj5.append(None)
 
->>> print(test3)
+>>> print(obj5)
 [None]
 
->>> test3.print_sorted()
+>>> obj5.print_sorted()
 [None]
