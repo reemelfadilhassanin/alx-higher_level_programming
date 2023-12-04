@@ -5,26 +5,24 @@
 Importing the class from the module:
 >>> MyList = __import__("1-my_list").MyList
 
-Test module docstring:
+Checking for module docstring:
 >>> m = __import__("1-my_list").__doc__
 >>> len(m) > 1
 True
 
-Test class docstring:
+Checking for class docstring:
 >>> c = __import__("1-my_list").MyList.__doc__
 >>> len(c) > 1
 True
 
-Test method docstring
-    >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
-    >>> len(f) > 1
-	True
+Checking for method docstring
+        >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
+        >>> len(f) > 1
+        True
 
-
-
-Test given test case
+Checking given test case
 >>> my_list = MyList()
-Test append
+
 >>> my_list.append(1)
 
 >>> my_list.append(4)
@@ -44,7 +42,7 @@ Test append
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-Test empty object
+Checking empty object
 >>> obj1 = MyList()
 
 >>> print(obj1)
@@ -53,7 +51,7 @@ Test empty object
 >>> obj1.print_sorted()
 []
 
-Test negative values
+Checking negative values
 >>> obj2 = MyList()
 
 >>> obj2.append(-1)
@@ -70,7 +68,7 @@ Test negative values
 >>> obj2.print_sorted()
 [-233, -9, -1, 0]
 
-Test NULL object
+Checking NULL object
 >>> obj3 = MyList()
 
 >>> obj3.append(NULL)
@@ -84,7 +82,7 @@ NameError: name 'NULL' is not defined
 >>> obj3.print_sorted()
 []
 
-Test NaN object
+Checking NaN object
 >>> obj4 = MyList()
 
 >>> obj4.append(NaN)
@@ -98,7 +96,7 @@ NameError: name 'NaN' is not defined
 >>> obj4.print_sorted()
 []
 
-Test None object
+Checking None object
 >>> obj5 = MyList()
 
 >>> obj5.append(None)
