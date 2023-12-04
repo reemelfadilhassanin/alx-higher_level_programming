@@ -16,12 +16,12 @@ Test class docstring:
 True
 
 Test method docstring
-    >>> md = __import__("1-my_list").MyList.print_sorted.__doc__
-    >>> len(md) > 1
-     True
+>>> md = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(md) > 1
+True
 Test MyList inherits from list:
-	>>> issubclass(MyList, list)
-	True
+>>> issubclass(MyList, list)
+True
 
 Test using given test case
 >>> my_list = MyList()
@@ -109,8 +109,9 @@ NameError: name 'NULL' is not defined
 >>> t4.print_sorted()
 []
 Test validate arguments:
-	>>> t9 = MyList()
-	>>> t9.print_sorted(10)
-	 Traceback (most recent call last):
-	 ...
-	 TypeError: print_sorted() takes 1 positional argument but 2 were given
+>>> t9 = MyList()
+>>> t9.append(10)
+>>> t9.print_sorted(10)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
