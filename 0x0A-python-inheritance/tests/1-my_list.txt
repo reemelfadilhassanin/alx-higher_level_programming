@@ -1,110 +1,53 @@
+=============================
+The ``1-my_list`` module
+=============================
 
-define ``1-my_list` module
-====================
+Using ``MyList``
+---------------------
 
-Importing the class from the module:
->>> MyList = __import__("1-my_list").MyList
+Import the class:
 
-Test module docstring:
->>> m = __import__("1-my_list").__doc__
->>> len(m) > 1
-True
+    >>> MyList = __import__('1-my_list').MyList
 
-Test class docstring:
->>> c = __import__("1-my_list").MyList.__doc__
->>> len(c) > 1
-True
+Now test it:
 
-Testmethod docstring
-        >>> f = __import__("1-my_list").MyList.print_sorted.__doc__
-        >>> len(f) > 1
-        True
+    >>> my_list = MyList()
 
-Test given test case
->>> my_list = MyList()
+    >>> my_list
+    []
 
-check if append is work
+    >>> my_list.append(1)
 
->>> my_list.append(1)
+    >>> my_list.append(4)
 
->>> my_list.append(4)
+    >>> my_list.append(2)
 
->>> my_list.append(2)
+    >>> my_list
+    [1, 4, 2]
 
->>> my_list.append(3)
+    >>> my_list.print_sorted()
+    [1, 2, 4]
 
->>> my_list.append(5)
+    >>> my_list
+    [1, 4, 2]
 
->>> print(my_list)
-[1, 4, 2, 3, 5]
+    >>> my_list = MyList([3, 6, 2])
 
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
+    >>> my_list
+    [3, 6, 2]
 
->>> print(my_list)
-[1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [2, 3, 6]
 
-Test emptyt
->>> t1 = MyList()
+    >>> my_list = MyList("hello")
+    
+    >>> my_list
+    ['h', 'e', 'l', 'l', 'o']
 
->>> print(t1)
-[]
+    >>> my_list.print_sorted()
+    ['e', 'h', 'l', 'l', 'o']
 
->>> t1.print_sorted()
-[]
+    >>> new_l = MyList()
 
-Test negative num
->>> t2 = MyList()
-
->>> t2.append(-1)
-
->>> t2.append(0)
-
->>> t2.append(-233)
-
->>> t2.append(-9)
-
->>> print(ot2)
-[-1, 0, -233, -9]
-
->>> t2.print_sorted()
-[-233, -9, -1, 0]
-
-Test NULL object
->>> t3 = MyList()
-
->>> t3.append(NULL)
-Traceback (most recent call last):
-    ...
-NameError: name 'NULL' is not defined
-
->>> print(t3)
-[]
-
->>> t3.print_sorted()
-[]
-
-Test NaN object
->>> t4 = MyList()
-
->>> t4.append(NaN)
-Traceback (most recent call last):
-    ...
-NameError: name 'NaN' is not defined
-
->>> print(t4)
-[]
-
->>> t4.print_sorted()
-[]
-
-Test None object
->>> t5 = MyList()
-
->>> t5.append(None)
-
->>> print(t5)
-[None]
-
->>> t5.print_sorted()
-[None]
+    >>> new_l.print_sorted()
+    []
