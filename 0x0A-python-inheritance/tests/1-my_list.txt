@@ -62,15 +62,15 @@ Checking negative values
 
 >>> obj2.append(0)
 
->>> obj2.append(-233)
+>>> obj2.append(-33)
 
->>> obj2.append(-9)
+>>> obj2.append(-10)
 
 >>> print(obj2)
-[-1, 0, -233, -9]
+[-1, 0, -33, -10]
 
 >>> obj2.print_sorted()
-[-233, -9, -1, 0]
+[-33, -10, -1, 0]
 
 Checking NULL object
 >>> obj3 = MyList()
