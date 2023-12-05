@@ -43,12 +43,12 @@ Testing appending works
 [1, 4, 2, 3, 5]
 
 Testing empty 
->>> o1 = MyList()
+>>> obj1 = MyList()
 
->>> print(o1)
+>>> print(obj1)
 []
 
->>> o1.print_sorted()
+>>> obj1.print_sorted()
 []
 
 Testing negative nums
@@ -82,7 +82,7 @@ NameError: name 'NULL' is not defined
 >>> obj3.print_sorted()
 []
 
-Testing NaN
+Checking NaN
 >>> obj4 = MyList()
 
 >>> obj4.append(NaN)
@@ -96,7 +96,7 @@ NameError: name 'NaN' is not defined
 >>> obj4.print_sorted()
 []
 
-Testing None
+Checking None object
 >>> obj5 = MyList()
 
 >>> obj5.append(None)
