@@ -12,12 +12,12 @@ def append_after(filename="", search_string="", new_string=""):
 
     """
 
-    readbuff = ""
-    with open(filename, 'r', encoding="utf-8") as b:
-        for buff in b:
+    readbuff = []
+    with open(filename, 'r', encoding="utf-8") as f:
+        for buff in f:
             readbuff += [buff]
             if buff.find(search_string) != -1:
                 readbuff += [new_string]
 
-    with open(filename, 'w', encoding="utf-8") as x:
-        x.write("".join(readbuff))
+    with open(filename, 'w', encoding="utf-8") as f:
+        f.write("".join(readbuff))
