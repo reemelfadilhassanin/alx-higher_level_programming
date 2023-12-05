@@ -7,8 +7,8 @@ def print_stats(size, status_codes):
     """Method to reads stdin and computes metrics.
     """
     print("File size: {}".format(size))
-    for k in sorted(status_codes):
-        print("{}: {}".format(k, status_codes[k]))
+    for t in sorted(status_codes):
+        print("{}: {}".format(t, status_codes[t]))
 
 
 if __name__ == "__main__":
@@ -17,15 +17,15 @@ if __name__ == "__main__":
     size = 0
     status_codes = {}
     valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
-    count = 0
+    c = 0
 
     try:
         for line in sys.stdin:
-            if count == 10:
+            if c == 10:
                 print_stats(size, status_codes)
-                count = 1
+                c = 1
             else:
-                count += 1
+                c += 1
 
             line = line.split()
 
