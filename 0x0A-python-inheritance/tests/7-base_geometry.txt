@@ -5,6 +5,15 @@ Define ``7-base_geometry`` module
 Importing class from the module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+Testing module docstring:
+    >>> m = __import__("7-base_geometry").__doc__
+    >>> len(m) > 1
+    True
+
+Creating an instance of the class and testing its methods:
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
 
 Trying area
     >>> bg = BaseGeometry()
