@@ -20,9 +20,9 @@ Testing method docstring
         >>> len(f) > 1
         True
 
-Testingg given test case
+Checking given test case
 >>> my_list = MyList()
-Testing appending works
+
 >>> my_list.append(1)
 
 >>> my_list.append(4)
@@ -42,7 +42,7 @@ Testing appending works
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-Testing empty 
+Checking empty object
 >>> obj1 = MyList()
 
 >>> print(obj1)
@@ -51,22 +51,22 @@ Testing empty
 >>> obj1.print_sorted()
 []
 
-Testing negative nums
+Checking negative values
 >>> obj2 = MyList()
 
->>> obj2.append(-2)
+>>> obj2.append(-1)
 
 >>> obj2.append(0)
 
->>> obj2.append(-33)
+>>> obj2.append(-233)
 
->>> obj2.append(-10)
+>>> obj2.append(-9)
 
 >>> print(obj2)
-[-2, 0, -33, -10]
+[-1, 0, -233, -9]
 
 >>> obj2.print_sorted()
-[-33, -10, -2, 0]
+[-233, -9, -1, 0]
 
 Checking NULL object
 >>> obj3 = MyList()
