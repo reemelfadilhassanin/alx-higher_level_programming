@@ -54,21 +54,21 @@ Testing empty
 Testing negative nums
 >>> obj2 = MyList()
 
->>> obj2.append(-1)
+>>> obj2.append(-2)
 
 >>> obj2.append(0)
 
->>> obj2.append(-233)
+>>> obj2.append(-33)
 
->>> obj2.append(-9)
+>>> obj2.append(-10)
 
 >>> print(obj2)
-[-1, 0, -233, -9]
+[-2, 0, -33, -10]
 
 >>> obj2.print_sorted()
-[-233, -9, -1, 0]
+[-33, -10, -2, 0]
 
-Testing NULL
+Checking NULL object
 >>> obj3 = MyList()
 
 >>> obj3.append(NULL)
@@ -82,7 +82,7 @@ NameError: name 'NULL' is not defined
 >>> obj3.print_sorted()
 []
 
-Checking NaN
+Checking NaN object
 >>> obj4 = MyList()
 
 >>> obj4.append(NaN)
