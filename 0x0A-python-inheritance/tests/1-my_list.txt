@@ -52,57 +52,57 @@ Testing empty
 []
 
 Testing negative nums
->>> o2 = MyList()
+>>> obj2 = MyList()
 
->>> o2.append(-1)
+>>> obj2.append(-1)
 
->>> o2.append(0)
+>>> obj2.append(0)
 
->>> o2.append(-233)
+>>> obj2.append(-233)
 
->>> o2.append(-9)
+>>> obj2.append(-9)
 
->>> print(o2)
+>>> print(obj2)
 [-1, 0, -233, -9]
 
->>> o2.print_sorted()
+>>> obj2.print_sorted()
 [-233, -9, -1, 0]
 
 Testing NULL
->>> o3 = MyList()
+>>> obj3 = MyList()
 
->>> o3.append(NULL)
+>>> obj3.append(NULL)
 Traceback (most recent call last):
     ...
 NameError: name 'NULL' is not defined
 
->>> print(o3)
+>>> print(obj3)
 []
 
->>> o3.print_sorted()
+>>> obj3.print_sorted()
 []
 
 Testing NaN
->>> o4 = MyList()
+>>> obj4 = MyList()
 
->>> o4.append(NaN)
+>>> obj4.append(NaN)
 Traceback (most recent call last):
     ...
 NameError: name 'NaN' is not defined
 
->>> print(o4)
+>>> print(obj4)
 []
 
->>> o4.print_sorted()
+>>> obj4.print_sorted()
 []
 
 Testing None
->>> o5 = MyList()
+>>> obj5 = MyList()
 
->>> o5.append(None)
+>>> obj5.append(None)
 
->>> print(o5)
+>>> print(obj5)
 [None]
 
->>> o5.print_sorted()
+>>> obj5.print_sorted()
 [None]
