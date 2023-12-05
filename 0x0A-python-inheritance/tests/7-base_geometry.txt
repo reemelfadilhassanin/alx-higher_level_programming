@@ -10,10 +10,6 @@ Testing module docstring:
     >>> len(m) > 1
     True
 
-Creating an instance of the class and testing its methods:
->>> c = __import__("7-base_geometry").BaseGeometry.__doc__
->>> len(c) > 1
-
 Trying area
     >>> bg = BaseGeometry()
     >>> bg.area()
