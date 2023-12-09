@@ -75,6 +75,19 @@ class Rectangle(Base):
         """Define public methof of rectangle
 
         Returns:
-                Return: return the area
+                                        Return: return the area
         """
         return self.width * self.height
+
+    def display(self):
+        """Defines puplic method to printe rectangle in stdout"""
+        for dis in range(self.y):
+            print()
+        for dis in range(self.height):
+            print(" " * self.x + "#" * self.width)
+
+    def __str__(self):
+        """Overriding the __str__ method
+        """
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.x, self.y, self.width, self.height)
