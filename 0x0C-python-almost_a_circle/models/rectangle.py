@@ -70,3 +70,11 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Define public methof of rectangle
+
+        Returns:
+                Return: return the area
+        """
+        return self.width * self.height
