@@ -81,10 +81,9 @@ class Rectangle(Base):
 
     def display(self):
         """Defines puplic method to printe rectangle in stdout"""
-        for dis in range(self.y):
-            print()
-        for dis in range(self.height):
-            print(" " * self.x + "#" * self.width)
+        dis = '\n' * self.y + \
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(dis, end='')
 
     def __str__(self):
         """Overriding the __str__ method
