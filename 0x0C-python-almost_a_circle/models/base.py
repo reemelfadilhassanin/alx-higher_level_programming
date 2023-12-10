@@ -28,3 +28,35 @@ class Base:
         if list_dictionaries is list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes JSON string format of list_objs to a file.
+
+        Args:
+            list_objs (list): A list instanse of inherited Base class.
+        """
+
+        f_joson = "{}.json".format(cls.__name__)
+        json_list = []
+        if list_objs is not None:
+            list_objs = [o.to_dictionary() for o in list_objs]
+        with open(f_joson, "w", encoding="utf-8") as f2:
+            if list_objs is None:
+                f2.write("[]")
+            else:
+                f2.write(cls.to_json_string(list_objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Define static method.
+
+        Args:
+            json_string (str): Astring representing a list of dictionaries
+        Returns:
+            If json_string is None or empty - an empty list.
+            Otherwise - return list represented by json_string.
+        """
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
