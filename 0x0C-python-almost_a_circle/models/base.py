@@ -72,9 +72,25 @@ class Base:
         from models.square import Square
         if cls.__name__ == Rectangle:
             dummy = Rectangle(1, 1)
-        elif cls is Square:
+        elif cls.__name__ == Square:
             dummy = Square(1)
         else:
             dummy = None
-        dummy.update(**dictionary)
+        if dummy:
+            dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Define class method load_from_file.
+        Returns:
+            Empty list - If the file does not exist.
+            Otherwise - a list of instantiated classes.
+        """
+        file1 = str(cls.__name__) + ".json"
+        try:
+            with open(file1, "r") as file2:
+                list_dicts = Base.from_json_string(file2.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
