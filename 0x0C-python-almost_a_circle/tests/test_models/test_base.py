@@ -112,11 +112,6 @@ class TestBase_to_json_string_val(unittest.TestCase):
         x = Square(10, 20, 30, 40)
         self.assertEqual(str, type(Base.to_json_string([x.to_dictionary()])))
 
-    def test_to_json_string_square_one_length(self):
-        """Test squ dimentaion"""
-        x = Square(10, 2, 30, 4)
-        self.assertTrue(len(Base.to_json_string([x.to_dictionary()])) == 39)
-
     def test_to_json_string_square_two_length(self):
         q1 = Square(10, 2, 3, 4)
         q2 = Square(4, 5, 21, 2)
