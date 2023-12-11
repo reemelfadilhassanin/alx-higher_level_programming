@@ -70,17 +70,13 @@ class Base:
         Returns:
             return: instance with all attributes already set
         """
-        from models.rectangle import Rectangle
-        from models.square import Square
-        if cls.__name__ == Rectangle:
-            dummy = Rectangle(1, 1)
-        elif cls.__name__ == Square:
-            dummy = Square(1)
-        else:
-            dummy = None
-        if dummy:
-            dummy.update(**dictionary)
-        return dummy
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
 
     @classmethod
     def load_from_file(cls):
