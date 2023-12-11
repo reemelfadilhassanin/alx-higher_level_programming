@@ -70,6 +70,7 @@ class Base:
         Returns:
             return: instance with all attributes already set
         """
+        dummy = None
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
         elif cls.__name__ == 'Square':

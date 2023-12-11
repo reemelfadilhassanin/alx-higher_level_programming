@@ -94,7 +94,7 @@ class Rectangle(Base):
         if args:
             for i in range(len(args)):
                 if i == 0:
-                    if type(args[i]) is not int:
+                    if args[i] is not None and type(args[i]) is not int:
                         raise TypeError("id must be an integer")
                     self.id = args[i]
                 elif i == 1:

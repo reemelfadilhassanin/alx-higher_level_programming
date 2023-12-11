@@ -24,7 +24,7 @@ class Square(Rectangle):
     def __str__(self):
         """Define string module for square.
         """
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".\
+        return "[Square] ({}) {}/{} - {}".\
             format(self.id, self.x,  self.y, self.width)
 
     @property
