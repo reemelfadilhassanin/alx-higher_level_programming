@@ -7,9 +7,6 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Defines square class inharit from rectangle
-
-    Args:
-        Rectangle:supper class
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -25,9 +22,6 @@ class Square(Rectangle):
 
     def __str__(self):
         """Define string module for square.
-
-        Returns:
-        return: return string format for square
         """
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,  self.y, self.width)
 
