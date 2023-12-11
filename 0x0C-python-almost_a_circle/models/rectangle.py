@@ -73,7 +73,7 @@ class Rectangle(Base):
         """Define public methof of rectangle
 
         Returns:
-                                                                                                                                                                                                                                                                        Return: return the area
+        Return: return the area
         """
         return self.width * self.height
 
