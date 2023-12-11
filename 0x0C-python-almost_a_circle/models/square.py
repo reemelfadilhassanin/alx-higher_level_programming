@@ -43,15 +43,15 @@ class Square(Rectangle):
         """
 
         if len(args):
-            for i, arg in enumerate(args):
+            for i, x in enumerate(args):
                 if i == 0:
-                    self.id = arg
+                    self.id = x
                 elif i == 1:
-                    self.size = arg
+                    self.size = x
                 elif i == 2:
-                    self.x = arg
+                    self.x = x
                 elif i == 3:
-                    self.y = arg
+                    self.y = x
         else:
             for key, value in kwargs.items():
                 if hasattr(self, key) is True:
