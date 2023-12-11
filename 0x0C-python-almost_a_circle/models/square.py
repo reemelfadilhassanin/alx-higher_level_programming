@@ -39,14 +39,6 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Define update the Square module
-
-        Args:
-                *args (ints): New arrguments values.
-                        - 1 argument represents id attribute
-                        - 2 argument represents size attribute
-                        - 3 argument represents x attribute
-                        - 4 argument represents y attribute
-                **kwargs (dict): New key/value pairs of attributes.
         """
 
         if args:
