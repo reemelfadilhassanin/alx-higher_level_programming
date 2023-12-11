@@ -13,10 +13,10 @@ class Square(Rectangle):
         """constructor for initialize object of class.
 
         Args:
-            size (int): size of square.
-            x (int): x coordinate of square. Defaults to 0.
-            y (int): y coordinate of square. Defaults to 0.
-            id (int): id of square. Defaults to None.
+                size (int): size of square.
+                x (int): x coordinate of square. Defaults to 0.
+                y (int): y coordinate of square. Defaults to 0.
+                id (int): id of square. Defaults to None.
         """
 
         super().__init__(size, size, x, y, id)
@@ -41,12 +41,12 @@ class Square(Rectangle):
         """Define update the Square module
 
         Args:
-            *args (ints): New arrguments values.
-                - 1st argument represents id attribute
-                - 2nd argument represents size attribute
-                - 3rd argument represents x attribute
-                - 4th argument represents y attribute
-            **kwargs (dict): New key/value pairs of attributes.
+                *args (ints): New arrguments values.
+                        - 1 argument represents id attribute
+                        - 2 argument represents size attribute
+                        - 3 argument represents x attribute
+                        - 4 argument represents y attribute
+                **kwargs (dict): New key/value pairs of attributes.
         """
 
         if args:
