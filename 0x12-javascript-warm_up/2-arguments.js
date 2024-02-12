@@ -1,10 +1,9 @@
 #!/usr/bin/node
-
 let x;
-const argsC = process.argv.length;
-if (argsC === 2) {
+const args = process.argv.length;
+if (args === 2) {
 	x = 'No argument';
-} else if (argsC === 3) {
+} else if (args === 3) {
 	x = 'Argument found';
 } else {
 	x = 'Arguments found';
