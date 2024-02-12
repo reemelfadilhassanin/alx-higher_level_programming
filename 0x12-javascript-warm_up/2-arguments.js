@@ -1,4 +1,6 @@
 #!/usr/bin/node
+// print args
+
 let x;
 const args = process.argv.length;
 if (args < 3) {
