@@ -4,34 +4,18 @@
 """
 from sys import argv
 import MySQLdb
-import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
+    dbconn = MySQLdb.connect(user=argv[1], port=3306, host="localhost",
+                             passwd=argv[2], db=argv[3])
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    dbconn = MySQLdb.connect(
-        host="localhost",
-        user=username,
-        passwd=password,
-        db=database,
-        port=3306
-    )
     curs = dbconn.cursor()
-    query = """
-        SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC
-    """
-    query = query.format(argv[4])
-
-    curs.execute(query)
+    curs.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
+    id ASC".format(argv[4]))
 
     res = curs.fetchall()
-
-    for line in res:
-        print(line)
+    for row in res:
+        if row[1] == argv[4]:
+            print(row)
     curs.close()
     dbconn.close()
