@@ -1,34 +1,19 @@
 #!/usr/bin/python3
 """this to takes in an argument and displays all values in the states table
 """
-from sys import argv
-import sys
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
-
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    dbconn = MySQLdb.connect(
-        host="localhost",
-        user=username,
-        passwd=password,
-        db=database,
-        port=3306
-    )
-
-    curs = dbconn.cursor()
-    query = """
+    conn = MySQLdb.connect(host="localhost", port=3306, charset="utf8",
+                           user=argv[1], passwd=argv[2], db=argv[3])
+    cur = conn.cursor()
+    q = """
 SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC"""
-    query = query.format(argv[4])
-    curs.execute(query)
-
-    res = curs.fetchall()
-    for row in res:
+    q = q.format(argv[4])
+    cur.execute(q)
+    query_rows = cur.fetchall()
+    for row in query_rows:
         print(row)
-    curs.close()
-    dbconn.close()
+    cur.close()
+    conn.close()
