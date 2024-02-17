@@ -6,28 +6,16 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
-
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    dbconn = MySQLdb.connect(
-        host="localhost",
-        user=username,
-        passwd=password,
-        db=database,
-        port=3306
-    )
+    dbconn = MySQLdb.connect(host="localhost", port=3306, charset="utf8",
+                             user=argv[1], passwd=argv[2], db=argv[3])
     curs = dbconn.cursor()
-    query = """
-		SELECT cities.name FROM cities JOIN states ON 
-		cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC
-	"""
-
-    curs.execute(query)
-    print(", ".join([city[2] for city in curs.fetchall()
-                     if city[4] == argv[4]]))
+    curs.execute("""
+        SELECT cities.id, cities.name, states.name FROM cities
+        LEFT JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        ORDER BY cities.id ASC;
+        """, (argv[4],))
+    res = curs.fetchall()
+    print(", ".join([row[1] for row in res]))
     curs.close()
     dbconn.close()
