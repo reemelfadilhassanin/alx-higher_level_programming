@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """this to  lists all cities from hbtn_0e_0_usa
 """
+from sys import argv
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("Usage: {} username password database".format(sys.argv[0]))
         sys.exit(1)
 
@@ -21,16 +22,12 @@ if __name__ == "__main__":
     )
     curs = dbconn.cursor()
     query = """
-        SELECT cities.id, cities.name, states.name
-                    FROM cities JOIN states ON cities.state_id = states.id
-                    ORDER BY cities.id ASC
-    """
+		SELECT cities.name FROM cities JOIN states ON 
+		cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC
+	"""
 
     curs.execute(query)
-
-    res = curs.fetchall()
-
-    for line in res:
-        print(line)
+    print(", ".join([city[2] for city in curs.fetchall()
+                     if city[4] == argv[4]]))
     curs.close()
     dbconn.close()
