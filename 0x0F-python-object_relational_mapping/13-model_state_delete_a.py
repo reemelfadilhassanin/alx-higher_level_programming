@@ -16,10 +16,12 @@ if __name__ == "__main__":
                            .format(db_username, db_password, db_name),
                            pool_pre_ping=True)
 
+    Base.metadata.create_all(engine)
+
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_update = session.query(State).filter(State.name.like('%a%')).all()
-    for state in state_update:
+    update = session.query(State).filter(State.name.like('%a%')).all()
+    for state in update:
         session.delete(state)
-        session.commit()
+    session.commit()
     session.close()
