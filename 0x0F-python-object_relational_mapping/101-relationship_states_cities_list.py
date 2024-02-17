@@ -10,10 +10,15 @@ from relationship_state import State
 from relationship_city import City
 
 if __name__ == "__main__":
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+    if len(sys.argv) != 4:
+        print("Usage: {} username password database".format(sys.argv[0]))
+        sys.exit(1)
+    db_username = sys.argv[1]
+    db_password = sys.argv[2]
+    db_name = sys.argv[3]
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(db_username, db_password, db_name),
                            pool_pre_ping=True)
-
     Session = sessionmaker(bind=engine)
     session = Session()
     for state in session.query(State).order_by(State.id):
