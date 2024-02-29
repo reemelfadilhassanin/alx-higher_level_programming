@@ -5,4 +5,4 @@ if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <URL>"
     exit 1
 fi
-printf "%s" "$(curl -s "$1")" | printf "%s" "$(wc -c)"
+curl -s "${1}" | wc -c
