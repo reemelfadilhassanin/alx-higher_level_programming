@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Python script that takes your GitHub credentials 
+"""Python script that takes your GitHub credentials
 """
 import requests
 import sys
