@@ -7,7 +7,7 @@ const filePath = process.argv[2];
 fs.readFile(filePath, 'utf-8', (err, data) => {
 	if (err) {
 		console.error(err);
-		return;
+		process.exit(1);
 	}
 	console.log(data);
 });
