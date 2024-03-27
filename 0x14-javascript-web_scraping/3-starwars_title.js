@@ -1,2 +1,4 @@
 #!/usr/bin/node
-require('request')(process.argv[2], (_, r, b) => console.log(JSON.parse(b).title))
+const request = require('request');
+const [, , movieId] = process.argv;
+request(`https://swapi-api.hbtn.io/api/films/${movieId}/`, (error, response, body) => console.log(error || JSON.parse(body).title));
