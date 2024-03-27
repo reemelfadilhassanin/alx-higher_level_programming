@@ -1,14 +1,22 @@
 #!/usr/bin/node
-// print num of movi
+
 const request = require('request');
-const find = '/18/';
-request(process.argv[2], function (error, response, body) {
-	if (error) throw new Error(error);
-	let num = 0;
-	for (const film of JSON.parse(body).results) {
-		for (const character of film.characters) {
-			num += (character.includes(find) ? 1 : 0);
+
+request(process.argv[2], (err, response, body) => {
+	if (err) {
+		console.log(err);
+	}
+
+	const results = JSON.parse(body).results;
+	let count = 0;
+
+	for (const result of results) {
+		for (const res of result.characters) {
+			if (res.endsWith('/18/')) {
+				count++;
+			}
 		}
 	}
-	console.log(num);
+
+	console.log(count);
 });
