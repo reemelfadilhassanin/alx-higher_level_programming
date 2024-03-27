@@ -19,7 +19,7 @@ request(url, (error, response, body) => {
 	const movieData = JSON.parse(body);
 	const charactersUrls = movieData.characters;
 
-	charactersUrls.forEach(characterUrl => {
+	charactersUrls.forEach((characterUrl) => {
 		request(characterUrl, (error, response, body) => {
 			if (error) {
 				console.error(error);
