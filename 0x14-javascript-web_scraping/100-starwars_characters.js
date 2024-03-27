@@ -1,0 +1,2 @@
+#!/usr/bin/node
+const request = require('request'), movieId = process.argv[2], url = `https://swapi-api.alx-tools.com/api/films/${movieId}/`; request(url, (e, r, b) => { if (e) { console.error(e); return } if (200 !== r.statusCode) { console.error(`Error: Status code ${r.statusCode}`); return } JSON.parse(b).characters.forEach(c => request(c, (e, r, b) => { if (e) { console.error(e); return } if (200 !== r.statusCode) { console.error(`Error: Status code ${r.statusCode}`); return } console.log(JSON.parse(b).name) })) });
